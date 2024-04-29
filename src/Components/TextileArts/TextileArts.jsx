@@ -37,11 +37,11 @@ const TextileArts = () => {
                 {dataItem.name}
               </h2>
               <h4
-                className="text-2xl font-bold my-10"
+                className="text-2xl my-10"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
-                Subcategory: {dataItem.subcategory}
+                <span className="font-bold">Subcategory:</span> {dataItem.subcategory}
               </h4>
               <hr />
               <p
@@ -49,7 +49,7 @@ const TextileArts = () => {
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                Description: {dataItem.description}
+                <span className="font-bold">Description:</span> {dataItem.description}
               </p>
               <hr />
               <div
@@ -58,7 +58,7 @@ const TextileArts = () => {
                 data-aos-delay="600"
               >
                 <p>
-                  <span className="text-xl">Customization:</span>
+                  <span className="text-xl font-bold">Customization:</span>
                   <span className="bg-orange-100 py-1 px-5 text-lg rounded-2xl">
                     {dataItem.customization}
                   </span>
@@ -71,15 +71,15 @@ const TextileArts = () => {
                 data-aos-delay="800"
               >
                 <p>
-                  <span className="text-xl">Processing Time:</span>
+                  <span className="text-xl font-bold">Processing Time:</span>
                   <span className="bg-orange-100 py-1 px-5 text-lg rounded-2xl">
                     {dataItem.time}
                   </span>
                 </p>
                 <p>
-                  <span className="text-xl">Price:</span>
+                  <span className="text-xl font-bold">Price:</span>
                   <span className="bg-orange-100 py-1 px-5 text-lg rounded-2xl">
-                    ${dataItem.price}
+                    {dataItem.price}TK
                   </span>
                 </p>
               </div>
@@ -90,13 +90,13 @@ const TextileArts = () => {
                 data-aos-delay="1000"
               >
                 <p>
-                  <span className="text-xl">Stock Status:</span>
+                  <span className="text-xl font-bold">Stock Status:</span>
                   <span className="bg-orange-100 py-1 px-5 text-lg rounded-2xl">
                     {dataItem.status}
                   </span>
                 </p>
                 <p>
-                  <span className="text-xl">Rating:</span>
+                  <span className="text-xl font-bold">Rating:</span>
                   <span className="bg-orange-100 py-1 px-5 text-lg rounded-2xl">
                     {dataItem.rating}
                   </span>

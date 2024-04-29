@@ -27,17 +27,21 @@ const AvailableArtCraft = ({ data }) => {
             />
           </div>
           <div className="space-y-5">
-            <h3 className="mt-4 mb-2 text-xl font-bold">{name}</h3>
-            <p>Subcategory: {subcategory}</p>
+            <h3 className="mt-4 mb-2 text-2xl font-bold">{name}</h3>
+            <p>
+              <span className="font-bold">Subcategory:</span> {subcategory}
+            </p>
             <hr />
-            <p>Stock Status: {status}</p>
+            <p>
+              <span className="font-bold">Stock Status:</span> {status}
+            </p>
             <hr />
             <p className="space-x-10 flex">
               <span className="bg-gray-100 py-1 px-4 rounded-2xl">
-                Rating: {rating}
+                <span className="font-bold">Rating:</span> {rating}
               </span>
               <span className="bg-gray-100 py-1 px-4 rounded-2xl">
-                Price: {price} TK
+                <span className="font-bold">Price:</span> {price} TK
               </span>
             </p>
             <hr />

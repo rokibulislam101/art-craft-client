@@ -61,10 +61,10 @@ const Navbar = () => {
         </div>
         <img className="w-20 h-20 rounded-full" src={homeImg} alt="" />
 
-        <a className="btn btn-ghost text-3xl text-black font-bold">
+        {/* <a className="btn btn-ghost text-3xl text-black font-bold">
           {' '}
           Textile Arts
-        </a>
+        </a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
