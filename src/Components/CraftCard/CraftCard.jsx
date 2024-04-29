@@ -52,9 +52,6 @@ const CraftCard = ({ data }) => {
                 View Details
               </button>
             </Link>
-            {/* <button className="btn btn-ghost border-2 bg-green-500 text-white mt-5">
-              View Details
-            </button> */}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import AvailableArtCraft from '../AvailableArtCraft/AvailableArtCraft';
 import Slider from '../Slider/Slider';
+import Blogs from '../Blogs/Blogs';
 import ArtTextile from '../ArtTextile/ArtTextile';
 import { Helmet } from 'react-helmet-async';
 
@@ -18,7 +19,7 @@ const Home = () => {
       <div>
         <div className=" p-10 my-20">
           <h1
-            className="text-center textile text-5xl mb-6 font-bold text-green-500"
+            className="text-center textile text-4xl mb-6 font-bold text-green-500"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -38,7 +39,21 @@ const Home = () => {
       </div>
 
       <ArtTextile></ArtTextile>
-      
+
+      <div className="my-[80px]">
+        <h1
+          className="text-center textile text-4xl mb-6 font-bold text-green-500"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Art & Craft Blogs
+        </h1>
+        <div className="sm:flex sm:col-wrap justify-around  m-10">
+        {datas.slice(0, 3).map(data => (
+          <Blogs key={data.id} data={data} />
+        ))}
+        </div>
+      </div>
     </div>
   );
 };
