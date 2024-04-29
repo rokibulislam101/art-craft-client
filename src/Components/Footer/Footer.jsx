@@ -3,7 +3,7 @@ import homeImg from '../../assets/images/home.jpg';
 const Footer = () => {
   return (
     <footer
-      className="footer px-20 py-10 bg-teal-500 text-yellow-50 transition flex justify-between"
+      className="footer px-20 py-10 bg-green-500 text-yellow-50 transition flex justify-between"
       data-aos="fade-up"
       data-aos-delay="300"
     >

@@ -18,25 +18,21 @@ const Home = () => {
       <div>
         <div className=" p-10 my-20">
           <h1
-            className="text-center textile text-5xl mb-6 font-bold "
+            className="text-center textile text-5xl mb-6 font-bold text-green-500"
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            Art & Craft Store
+            Craft Items
           </h1>
           <p className="text-center" data-aos="fade-up" data-aos-delay="600">
-            The Arts and Crafts movement, first flourishing in the British
-            Isles, emphasized traditional craftsmanship and spread across
-            Europe, America, and the British Empire.
+            Craft item means any consumer commodity that is not an agricultural
+            commodity or a perishable consumer commodity that is manufactured.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20 mx-10">
           {datas.map(data => (
-            <AvailableArtCraft
-              key={data.id}
-              data={data}
-            ></AvailableArtCraft>
+            <AvailableArtCraft key={data.id} data={data}></AvailableArtCraft>
           ))}
         </div>
       </div>

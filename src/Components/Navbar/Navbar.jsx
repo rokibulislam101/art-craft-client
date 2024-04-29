@@ -15,7 +15,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li className="mr-5 text-xl text-black font-semibold">
-        <NavLink to="/" activeClassName="active-nav">
+        <NavLink to="/AllArtCraftItems" activeClassName="active-nav">
           All Art & craft Items
         </NavLink>
       </li>

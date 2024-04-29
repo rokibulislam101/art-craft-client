@@ -19,8 +19,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 // ..
 AOS.init();
 
-const url =
-  ' https://rokibulislam101.github.io/luxury-brand-data/luxuryData.json';
+const url = 'http://localhost:5000/craft';
 
 const router = createBrowserRouter([
   {
@@ -45,10 +44,15 @@ const router = createBrowserRouter([
       {
         path: '/allArtCraftItems',
         element: <AllArtCraftItems></AllArtCraftItems>,
+        loader: async () => fetch(url),
       },
       {
         path: '/addCraftItem',
-        element: <AddCraftItem></AddCraftItem>,
+        element: (
+          <PrivateRoute>
+            <AddCraftItem></AddCraftItem>,
+          </PrivateRoute>
+        ),
       },
       {
         path: '/register',
