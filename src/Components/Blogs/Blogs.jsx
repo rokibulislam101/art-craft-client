@@ -18,7 +18,6 @@ const Blogs = ({ data = {} }) => {
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>{description}</p>
-          {/* Ensure the Link path is correctly formatted */}
           <Link
             to={`/data/${_id}`}
             className="text-blue-500 hover:text-blue-700"

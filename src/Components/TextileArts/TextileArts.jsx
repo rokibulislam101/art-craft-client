@@ -15,7 +15,7 @@ const TextileArts = () => {
       <div className="mt-[100px]">
         <div className="text-4xl lg:text-6xl font-bold p-2 lg:p-10 bg-green-500 text-white mb-20 h-[300px] flex justify-center items-center">
           <h2 className="animate__animated animate__fadeInLeft">
-            Textile Arts
+            Textile Arts Item
           </h2>
         </div>
 

@@ -9,22 +9,22 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li className="mr-5 text-xl text-black font-semibold">
+      <li className="mr-5 font-bold">
         <NavLink exact to="/" activeClassName="active-nav">
           Home
         </NavLink>
       </li>
-      <li className="mr-5 text-xl text-black font-semibold">
+      <li className="mr-5 font-bold">
         <NavLink to="/AllArtCraftItems" activeClassName="active-nav">
           All Art & craft Items
         </NavLink>
       </li>
-      <li className="mr-5 text-xl text-black font-semibold">
+      <li className="mr-5 font-bold">
         <NavLink to="/AddCraftItem" activeClassName="active-nav">
           Add Craft Item
         </NavLink>
       </li>
-      <li className="mr-5 text-xl text-black font-semibold">
+      <li className="mr-5 font-bold">
         <NavLink to="/" activeClassName="active-nav">
           My Art&Craft List
         </NavLink>
@@ -59,7 +59,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <img className="w-20 h-20 rounded-full" src={homeImg} alt="" />
+        <img className="w-[100px] h-[100px] rounded-full" src={homeImg} alt="" />
 
         {/* <a className="btn btn-ghost text-3xl text-black font-bold">
           {' '}
@@ -86,7 +86,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={logOut}
-              className="btn btn-ghost text-xl bg-green-500 hover:bg-primary text-white font-semibold"
+              className="btn btn-ghost bg-green-500 hover:bg-primary text-white font-bold"
             >
               Log out
             </button>
@@ -94,7 +94,7 @@ const Navbar = () => {
         ) : (
           <Link
             to={'/login'}
-            className="tooltip-top btn btn-ghost bg-green-500 hover:bg-primary text-white text-xl font-semibold"
+            className="tooltip-top btn btn-ghost bg-green-500 hover:bg-primary text-white font-bold"
           >
             Login
           </Link>
