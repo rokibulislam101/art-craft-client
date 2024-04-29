@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import AvailableArtCraft from '../AvailableArtCraft/AvailableArtCraft';
 import Slider from '../Slider/Slider';
+import ArtTextile from '../ArtTextile/ArtTextile';
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
@@ -35,6 +36,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <ArtTextile></ArtTextile>
+      
     </div>
   );
 };
