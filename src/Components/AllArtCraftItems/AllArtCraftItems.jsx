@@ -13,8 +13,8 @@ const AllArtCraftItems = () => {
       </div>
       
       <div className="grid md:grid-cols-2 gap-4 m-10">
-        {crafts.map(craft => (
-          <CraftCard key={craft.id} craft={craft}></CraftCard>
+        {crafts.map(data => (
+          <CraftCard key={data.id} data={data}></CraftCard>
         ))}
       </div>
     </div>

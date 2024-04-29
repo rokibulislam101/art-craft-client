@@ -12,17 +12,17 @@ const TextileArts = () => {
       <Helmet>
         <title>TextileArts</title>
       </Helmet>
-      <div className="mt-[90px]">
+      <div className="mt-[100px]">
         <div className="text-4xl lg:text-6xl font-bold p-2 lg:p-10 bg-green-500 text-white mb-20 h-[300px] flex justify-center items-center">
           <h2 className="animate__animated animate__fadeInLeft">
             Textile Arts
           </h2>
         </div>
 
-        <div className="my-20 mx-2 lg:mx-10 flex justify-center items-center flex-col shadow-2xl lg:p-10 rounded-2xl">
-          <div className="w-[90%] md:flex md:gap-10">
+        <div className="m-10 p-5 md:p-10 flex justify-center items-center flex-col shadow-2xl rounded-2xl">
+          <div className="w-full md:flex md:gap-10">
             <img
-              className="w-full rounded-2xl"
+              className="md:w-1/2 rounded-2xl"
               data-aos="fade-up"
               data-aos-delay="200"
               src={dataItem.image}
@@ -37,7 +37,7 @@ const TextileArts = () => {
                 {dataItem.name}
               </h2>
               <h4
-                className="text-4xl lg:text-5xl font-bold text-green-500 my-10"
+                className="text-2xl font-bold my-10"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >

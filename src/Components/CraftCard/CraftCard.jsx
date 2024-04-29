@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 
-const CraftCard = ({ craft }) => {
-  const { image, name, subcategory, status, rating, price, customization } = craft;
+const CraftCard = ({ data }) => {
+  const {
+    _id,
+    image,
+    name,
+    subcategory,
+    status,
+    rating,
+    price,
+  } = data;
 
 
   return (
@@ -11,21 +19,19 @@ const CraftCard = ({ craft }) => {
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <div className="rounded-2xl md:w-[500px] h-[350px]">
+        <div className="rounded-2xl md:w-[600px] h-[350px]">
           <img
             className="rounded-2xl hover:scale-100 overflow-hidden w-full h-full"
             src={image}
             alt=""
           />
         </div>
-        <div className="sm:flex justify-between items-center gap-3 w-full pr-4">
+        <div className="justify-between items-center gap-3 w-full pr-4">
           <div className="space-y-5">
             <h3 className="mt-4 mb-2 text-xl font-bold">{name}</h3>
             <p>Subcategory: {subcategory}</p>
             <hr />
             <p>Stock Status: {status}</p>
-            <hr />
-            <p>Customization: {customization}</p>
             <hr />
             <p className="space-x-10 flex">
               <span className="bg-gray-100 py-1 px-4 rounded-2xl">
@@ -36,12 +42,15 @@ const CraftCard = ({ craft }) => {
               </span>
             </p>
           </div>
-          <div className="card-actions md:justify-end justify-center m-2">
-            <div className="btn-group btn-group-vertical justify-center flex sm:block items-center ">
-              <button className="btn sm:w-full m-2">View</button>
-              <button className="btn sm:w-full m-2">Edit</button>
-              <button className="btn sm:w-full m-2">Delete</button>
-            </div>
+          <div className="flex justify-between items-center">
+            <Link to={`/data/${_id}`}>
+              <button className="btn btn-ghost border-2 bg-green-500 text-white mt-5">
+                View Details
+              </button>
+            </Link>
+            {/* <button className="btn btn-ghost border-2 bg-green-500 text-white mt-5">
+              View Details
+            </button> */}
           </div>
         </div>
       </div>
