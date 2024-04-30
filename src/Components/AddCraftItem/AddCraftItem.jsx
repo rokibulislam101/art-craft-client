@@ -1,7 +1,11 @@
 import { Helmet } from 'react-helmet-async';
+import { useContext } from 'react';
+import { AuthContext } from '../authProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
+  const { currentUser } = useContext(AuthContext);
   const handleAddCraft = event => {
     event.preventDefault();
 
@@ -16,8 +20,23 @@ const AddCraftItem = () => {
     const status = form.status.value;
     const image = form.image.value;
     const description = form.description.value;
+    const email = currentUser.email;
+    // const admin = currentUser.admin;
+    const displayName = currentUser.displayName;
 
-    const newCraft = { name, subcategory, price, customization, rating, time, status, image, description };
+    const newCraft = {
+      displayName,
+      email,
+      name,
+      subcategory,
+      price,
+      customization,
+      rating,
+      time,
+      status,
+      image,
+      description,
+    };
     console.log(newCraft);
 
     //send data to the server

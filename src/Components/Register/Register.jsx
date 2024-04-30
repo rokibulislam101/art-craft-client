@@ -21,23 +21,23 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  //navigation sistem
+  //Navigation System
   const navigate = useNavigate();
 
   const from = '/';
 
   const onSubmit = data => {
-    const { email, password, name, photo } = data;
-    console.log(name, photo);
+    const { email, password, admin, photo } = data;
+    console.log(admin, photo);
     if (passwordChecker.test(password)) {
       createUser(email, password).then(result => {
         if (result.user) {
           updateProfile(result.user, {
-            displayName: name,
+            displayName: admin,
             photoURL: photo,
           }).then(() => {
             setCurrentUser({
-              displayName: name,
+              displayName: admin,
               photoURL: photo,
             });
             navigate(from);
@@ -77,7 +77,7 @@ const Register = () => {
                 placeholder="Your Full Name"
                 name="name"
                 className="input input-bordered text-xl"
-                {...register('name', { required: true })}
+                {...register('admin', { required: true })}
               />
               {errors.FullName && (
                 <span className="text-red-500">This field is required</span>

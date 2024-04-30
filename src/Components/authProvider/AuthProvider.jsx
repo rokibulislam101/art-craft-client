@@ -31,17 +31,17 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   //update User profile
-  const updateUserProfile = (name, photo) => {
+  const updateUserProfile = (admin, photo) => {
     return updateProfile(auth.currentUser, {
-      displayName: name,
+      displayName: admin,
       photoURL: photo,
     });
   };
 
   //sign in user
-  const signInUser = (email, password) => {
+  const signInUser = (admin, email, password) => {
     setloading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, admin, email, password);
   };
   //Google login
   const googleLogin = () => {
@@ -68,13 +68,13 @@ const AuthProvider = ({ children }) => {
 
   //observer
   useEffect(() => {
-    const unsubcribe = onAuthStateChanged(auth, user => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
         setCurrentUser(user);
         setloading(false);
       }
     });
-    return () => unsubcribe();
+    return () => unsubscribe();
   }, []);
 
   const allValues = {
