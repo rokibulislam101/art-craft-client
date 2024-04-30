@@ -1,11 +1,10 @@
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const TextileArts = () => {
-  const data = useLoaderData(); // Retrieves the data from the loader
-  const { id } = useParams(); // Retrieves the ID from the URL params
-  const dataItem = data.find(item => item._id === id); // Finds the data by _id
-  console.log(dataItem, id);
+  const dataItem = useLoaderData();
+  // const { id } = useParams();
 
   return (
     <div>

@@ -65,7 +65,6 @@ const AddCraftItem = () => {
     <div>
       <Helmet>
         <title>AddCraftItem</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="mt-[100px] justify-center bg-orange-200">
         <div className="text-4xl lg:text-6xl font-bold p-2 lg:p-10 bg-green-500 text-white mb-20 h-[300px] flex justify-center items-center">

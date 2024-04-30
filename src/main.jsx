@@ -15,12 +15,15 @@ import NotFound from './Components/NotFound/NotFound';
 import AllArtCraftItems from './Components/AllArtCraftItems/AllArtCraftItems';
 import MyArtCraftList from './Components/MyArtCraftList/MyArtCraftList';
 import AddCraftItem from './Components/AddCraftItem/AddCraftItem';
-import TextileArts from './Components/TextileArts/TextileArts';
 import UpdateCraftItem from './Components/UpdateCraftItem/UpdateCraftItem';
+import TextileArts from './Components/TextileArts/TextileArts';
 
 AOS.init();
 
 const BASE_URL = 'http://localhost:5000/craft';
+const BASES_URL =
+  'http://localhost:5000/craft-data/rokibulislamalways101@gmail.com';
+
 
 const router = createBrowserRouter([
   {
@@ -56,7 +59,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/updateCraftItem/:id',
+        path: '/dataArt/:id',
         element: <UpdateCraftItem />,
         loader: ({ params }) => fetch(`${BASE_URL}/${params.id}`),
       },
@@ -67,7 +70,7 @@ const router = createBrowserRouter([
             <MyArtCraftList />
           </PrivateRoute>
         ),
-        loader: () => fetch(BASE_URL),
+        loader: () => fetch(BASES_URL),
       },
       {
         path: '/register',

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyArtCraftCard = ({ data, datas, setDatas }) => {
-  const { _id, image, name, subcategory, status, rating, price } = data;
+  const { _id, email,  image, name, subcategory, status, rating, price } = data;
 
   const handleDelete = id => {
     Swal.fire({
@@ -70,9 +70,11 @@ const MyArtCraftCard = ({ data, datas, setDatas }) => {
             </div>
           </div>
           <div className="flex justify-between items-center mt-5">
-            <Link to={`/updateCraftItem/${_id}`}>
+            
+            <Link to={`/dataArt/${_id}`}>
               <button className="btn">Update</button>
             </Link>
+
             <button
               onClick={() => handleDelete(_id)}
               className="btn bg-orange-500 text-white"

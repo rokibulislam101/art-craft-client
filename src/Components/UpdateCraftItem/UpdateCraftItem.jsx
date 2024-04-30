@@ -65,10 +65,10 @@ const UpdateCraftItem = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data.insertedID) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
-            text: 'Craft Item Update Successfully',
+            text: 'Craft Item Updated Successfully',
             icon: 'success',
             confirmButtonText: 'Cool',
           });
@@ -80,7 +80,6 @@ const UpdateCraftItem = () => {
     <div>
       <Helmet>
         <title>UpdateCraftItem</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="mt-[100px] justify-center bg-orange-200">
         <div className="text-4xl lg:text-6xl font-bold p-2 lg:p-10 bg-green-500 text-white mb-20 h-[300px] flex justify-center items-center">
@@ -190,7 +189,7 @@ const UpdateCraftItem = () => {
                   type="text"
                   name="status"
                   defaultValue={status}
-                  placeholder="In stock or Made to Order"
+                  placeholder="In Stock or Made to Order"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -228,7 +227,7 @@ const UpdateCraftItem = () => {
           </div>
           <input
             type="submit"
-            value="Add Craft Item"
+            value="Update Craft Item"
             className="btn btn-neutral w-full mt-5"
           />
         </form>
