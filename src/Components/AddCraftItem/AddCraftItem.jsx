@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { AuthContext } from '../authProvider/AuthProvider';
-import { FaUser } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
