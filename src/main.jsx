@@ -11,6 +11,7 @@ import AuthProvider from './Components/authProvider/AuthProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AllArtCraftItems from './Components/AllArtCraftItems/AllArtCraftItems';
+import MyArtCraftList from './Components/MyArtCraftList/MyArtCraftList';
 import AddCraftItem from './Components/AddCraftItem/AddCraftItem';
 import TextileArts from './Components/TextileArts/TextileArts';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
@@ -53,6 +54,15 @@ const router = createBrowserRouter([
             <AddCraftItem></AddCraftItem>,
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/myArtCraftList',
+        element: (
+          <PrivateRoute>
+            <MyArtCraftList></MyArtCraftList>,
+          </PrivateRoute>
+        ),
+        loader: async () => fetch(url),
       },
       {
         path: '/register',
