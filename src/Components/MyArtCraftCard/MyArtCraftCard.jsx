@@ -16,9 +16,12 @@ const MyArtCraftCard = ({ data, datas, setDatas }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/craft/${id}`, {
-          method: 'DELETE',
-        })
+        fetch(
+          `https://art-craft-store-fo2um4jb5-md-rokibul-islam-mollahs-projects.vercel.app/craft/${id}`,
+          {
+            method: 'DELETE',
+          }
+        )
           .then(res => res.json())
           .then(response => {
             if (response.deletedCount > 0) {

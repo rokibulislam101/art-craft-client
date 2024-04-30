@@ -55,13 +55,16 @@ const UpdateCraftItem = () => {
     console.log(updatedCraft);
 
     //send data to the server
-    fetch(`http://localhost:5000/craft/${_id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updatedCraft),
-    })
+    fetch(
+      `https://art-craft-store-fo2um4jb5-md-rokibul-islam-mollahs-projects.vercel.app/craft/${_id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updatedCraft),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);

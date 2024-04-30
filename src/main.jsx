@@ -20,9 +20,8 @@ import TextileArts from './Components/TextileArts/TextileArts';
 
 AOS.init();
 
-const BASE_URL = 'http://localhost:5000/craft';
-const BASES_URL =
-  'http://localhost:5000/craft-data/rokibulislamalways101@gmail.com';
+const BASE_URL =
+  'https://art-craft-store-fo2um4jb5-md-rokibul-islam-mollahs-projects.vercel.app/craft';
 
 
 const router = createBrowserRouter([
@@ -70,7 +69,7 @@ const router = createBrowserRouter([
             <MyArtCraftList />
           </PrivateRoute>
         ),
-        loader: () => fetch(BASES_URL),
+        loader: () => fetch(BASE_URL),
       },
       {
         path: '/register',

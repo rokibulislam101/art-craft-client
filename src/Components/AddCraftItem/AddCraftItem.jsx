@@ -39,17 +39,20 @@ const AddCraftItem = () => {
     console.log(newCraft);
 
     //send data to the server
-    fetch('http://localhost:5000/craft', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newCraft)
-    })
+    fetch(
+      'https://art-craft-store-fo2um4jb5-md-rokibul-islam-mollahs-projects.vercel.app/craft',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(newCraft),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if(data.insertedID){
+        if (data.insertedID) {
           Swal.fire({
             title: 'Success!',
             text: 'Craft Item Added Successfully',
