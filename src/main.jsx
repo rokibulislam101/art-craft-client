@@ -2,75 +2,80 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { HelmetProvider } from 'react-helmet-async';
+import AuthProvider from './Components/authProvider/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
-import AuthProvider from './Components/authProvider/AuthProvider';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import AllArtCraftItems from './Components/AllArtCraftItems/AllArtCraftItems';
 import MyArtCraftList from './Components/MyArtCraftList/MyArtCraftList';
 import AddCraftItem from './Components/AddCraftItem/AddCraftItem';
 import TextileArts from './Components/TextileArts/TextileArts';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import UpdateCraftItem from './Components/UpdateCraftItem/UpdateCraftItem';
 
-// ..
 AOS.init();
 
-const url = 'http://localhost:5000/craft';
+const BASE_URL = 'http://localhost:5000/craft';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root></Root>,
-    errorElement: <NotFound></NotFound>,
+    element: <Root />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: async () => fetch(url),
+        element: <Home />,
+        loader: () => fetch(BASE_URL),
       },
       {
         path: '/data/:id',
         element: (
           <PrivateRoute>
-            <TextileArts></TextileArts>,
+            <TextileArts />
           </PrivateRoute>
         ),
-        loader: async () => fetch(url),
+        loader: ({ params }) => fetch(`${BASE_URL}/${params.id}`),
       },
       {
         path: '/allArtCraftItems',
-        element: <AllArtCraftItems></AllArtCraftItems>,
-        loader: async () => fetch(url),
+        element: <AllArtCraftItems />,
+        loader: () => fetch(BASE_URL),
       },
       {
         path: '/addCraftItem',
         element: (
           <PrivateRoute>
-            <AddCraftItem></AddCraftItem>,
+            <AddCraftItem />
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/updateCraftItem/:id',
+        element: <UpdateCraftItem />,
+        loader: ({ params }) => fetch(`${BASE_URL}/${params.id}`),
       },
       {
         path: '/myArtCraftList',
         element: (
           <PrivateRoute>
-            <MyArtCraftList></MyArtCraftList>,
+            <MyArtCraftList />
           </PrivateRoute>
         ),
-        loader: async () => fetch(url),
+        loader: () => fetch(BASE_URL),
       },
       {
         path: '/register',
-        element: <Register></Register>,
+        element: <Register />,
       },
       {
         path: '/login',
-        element: <Login></Login>,
+        element: <Login />,
       },
     ],
   },
